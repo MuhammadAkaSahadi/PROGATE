@@ -1,0 +1,29 @@
+Basic Git Command
+- git init : (initialize) digunakan untuk nanti kita menginisialisasi/memberi tahu git bahwa kita membuat repo
+- git status : melihat status git kita
+- git log : history
+- git add : menambah file kedalam "kotak"
+- git commit : menutup "kotak" yang sudah berisi file
+- git push : mengirim "kotak" ke github.com
+
+
+Tata cara upload file ke github lewat git bash
+1. Masuk ke dalam folder yang file/folder nya ingin di up ke github.
+2. Klik kanan -> "Show more options" -> Git Bash here
+3. Buat folder git nya terlebih dahulu dengan cara -> git init (folder akan muncul secara hide)
+4. git status : pastikan tidak ada file/folder yang sedang ingin di up (harus clean)
+5. git add (ada dua cara. "git add (nama.file)" atau "git add ." untuk upload semua file di dalam folder)
+6. git status (optional untuk cek kembali. Pastikan hijau)
+7. git commit -m "message update"
+8. git status (optional untuk cek kembali. Pastikan nothing to commit)
+9. Masukkan link GitHub/repo kita -> git remote add origin https://blabla
+10. Buat branch/origin master kita yang sebelumnya belum ada di GitHub/repo kita dan sekaligus upload file kita ke GitHub -> git push --set-upstream origin master
+SELESAI
+
+Tata cara commit/upload file yang sudah terupdate
+1. Masuk ke folder yang sudah dicommit seperti di atas
+2. Masuk ke Git Besh here
+3. "git add (file)" atau (git add .)
+4. git commit -m "update message"
+5. git push
+SELESAI

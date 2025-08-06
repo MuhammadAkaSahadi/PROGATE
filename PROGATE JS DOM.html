@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript dan DOM</title>
+</head>
+<body>
+    <!-- Memanipulasi HTML dengan DOM -->
+    <!-- Dalam melakukan manipulasi DOM kita mengenal 2 hal, yaitu DOM method dan DOM property. 
+        DOM method adalah sebuah aksi yang dapat kita lakukan, 
+        sedangkan DOM property adalah sebuah nilai yang dapat kita ubah -->
+    <p id="demo"> </p>
+
+    <div id="buat"></div>
+
+    <h1 id="remove">AAAAAAAAAAAAAAAAA</h1>
+
+    <img id="myImage" src="https://i.pinimg.com/564x/19/ec/ed/19eced750103fc837c742804a7a820c9.jpg">
+    <br>
+
+    <label for="name">Nama</label>
+    <input id="name" type="text" value="Ninja Ken">
+
+    <p id="greeting">Halo Progate!</p>
+
+    <button onclick="changeButton(this)">Klik disini!</button>
+
+
+    <script>
+        // Bisa dengan <script src="./script.js">...<script>, seperti CSS
+        document.getElementById("demo").innerHTML = "Hello World!";
+
+        // DOM Method
+        // Beberapa DOM Method yang sering digunakan untuk mencari element HTML adalah:
+        // document.getElementById(id) - untuk memilih element HTML berdasarkan nama id.
+        // document.getElementsByTagName(tagName) - untuk memilih element HTML berdasarkan nama tag HTML.
+        // document.getElementsByClassName(className) - untuk memilih element HTML berdasarkan nama class.
+        // document.querySelector(selector) - untuk memilih element HTML pertama yang sesuai dengan selector tertentu.
+
+        // Kita juga bisa memanipulasi element HTML dengan code berikut:
+        // document.createElement(tagName) - untuk membuat sebuah element HTML dengan nama tag HTML tertentu.
+        // element.append(element) - untuk menambahkan sebuah element HTML ke dalam element HTML tertentu.
+        const divDemo = document.getElementById("buat");
+        const paragraph = document.createElement("p");
+        paragraph.innerHTML = "Tambah element!";
+        divDemo.append(paragraph);
+
+        // Kamu dapat menghapus element dengan element.remove()
+        const h1 = document.getElementById("remove");
+        h1.remove();
+
+        // DOM Property
+        // Beberapa DOM Property yang sering digunakan untuk memanipulasi element HTML adalah:
+        // .innerHTML - untuk mengubah konten dari sebuah element HTML.
+        // .attribute - untuk mengubah nilai dari sebuah attribute, contohnya kita ingin mengubah nilai dari attribute src pada sebuah tag <img>.
+        // .value - untuk mengambil nilai pada sebuah element HTML atau mengganti nilai dari sebuah element HTML.
+
+        // Memanipulasi "attribute" HTML. Itu mendapatkan element dengan id="myimage" dan mengakses attribute src dan memperbaruinya dengan gambar baru.
+        document.getElementById("myImage").src = "https://i.pinimg.com/564x/89/4f/15/894f156accbcbff8a5a406a1ba504bb8.jpg";
+
+        // Contoh manipulasi "value" dari input.
+        // Pada contoh ini, kita mengambil nilai dari sebuah input dan menampilkannya dengan console.log()
+        // Inspect --> Console
+        const name = document.getElementById("name").value;
+        console.log(name);
+
+        // Memanipulasi CSS
+        document.getElementById("greeting").style.color = "green";
+
+        // Mengelola event
+        // Berikut adalah contoh event yang sering digunakan :
+        // Ketika cursor berada pada sebuah element HTML
+        // Ketika sebuah input berubah
+        // Ketika sebuah form dikirim
+        // Ketika sebuah tombol ditekan
+        function changeButton(obj) {
+        obj.innerHTML = "Ooops!";
+        obj.style.color = "red";
+        }
+
+        // Beberapa event yang sering digunakan di dalam halaman web adalah:
+        // onclick - ketika sebuah element HTML diklik.
+        // onmouseover dan onmouseout - ketika cursor berada di atas sebuah element HTML atau ketika cursor tidak lagi berada di atasnya.
+        // onchange - ketika sebuah nilai pada sebuah element input berubah
+    </script>
+</body>
+</html>
